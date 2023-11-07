@@ -12,7 +12,6 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var et_password : EditText
     private lateinit var et_passwordCheck : EditText
     private lateinit var btn_next : Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -26,7 +25,7 @@ class RegisterActivity : AppCompatActivity() {
             if(et_password.text.toString() == et_passwordCheck.text.toString()) {
                 val intent = Intent(this, RegisterInfoActivity::class.java)
                 intent.putExtra("account", et_id.text.toString())
-                intent.putExtra("password", et_id.text.toString())
+                intent.putExtra("password", et_password.text.toString())
                 startActivity(intent)
             }
             else {
